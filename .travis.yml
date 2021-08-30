@@ -1,1 +1,10 @@
+language: node_js
 
+node_js:
+  - node
+
+script: npm run test
+
+after_success:
+  - docker build . -t blzface/future-of-security:frontend-$TRAVIS_BUILD_NUMBER
+  - echo "$DockerPassword" | docker login --username "$DockerUsername" --password-stdin; docker push  blzface/future-of-security:frontend-$TRAVIS_BUILD_NUMBER
