@@ -6,5 +6,5 @@ node_js:
 script: npm run test
 
 after_success:
-  - docker build . -t blzface/future-of-security-frontend:$TRAVIS_BUILD_NUMBER
-  - docker push  blzface/future-of-security-frontend:TRAVIS_BUILD_NUMBER
+  - echo "$DockerPassword" | docker login --username "$DockerUsername" --password-stdin; docker build . -t blzface/future-of-security-frontend$TRAVIS_BUILD_NUMBER
+  - docker push  blzface/future-of-security:frontend-$TRAVIS_BUILD_NUMBER
