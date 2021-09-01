@@ -24,5 +24,12 @@
     "vite": "^2.5.1",
     "vue-jest": "^5.0.0-0",
     "vue-tsc": "^0.2.2"
+  },
+  "vue": {
+    "configureWebpack": {
+      "devServer": {
+        "headers": { "Access-Control-Allow-Origin": "*" }
+      }
+    }
   }
 }

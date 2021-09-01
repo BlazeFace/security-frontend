@@ -1,13 +1,31 @@
 <template>
   <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 p-2">
-    <ItemBox/>
-    <ItemBox/>
+    <item-box :content= retContent />
+    <item-box :content= retContent />
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
 import ItemBox from './ItemBox.vue'
 
+export default {
+    components: {
+      ItemBox
+    },
+    data() {
+      return {
+        retContent: ''
+      };
+    },
+    methods: {
+      getContents(): void {
+        fetch("/api/content/test-content").then((result) => result.json()).then((data) => this.retContent = data.message.content);
+      }
+    },
+    beforeMount() {
+      this.getContents();
+    }
+}
 </script>
 
 <style scoped>
