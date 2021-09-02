@@ -6,9 +6,10 @@
 </template>
 
 <script lang="ts">
+import { defineComponent } from 'vue';
 import ItemBox from './ItemBox.vue'
 
-export default {
+export default defineComponent({
     components: {
       ItemBox
     },
@@ -25,7 +26,7 @@ export default {
     beforeMount() {
       this.getContents();
     }
-}
+})
 </script>
 
 <style scoped>
