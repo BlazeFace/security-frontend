@@ -1,5 +1,5 @@
 <template>
-  <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 p-2">
+  <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 p-2 ">
     <item-box :content= retContent />
     <item-box :content= retContent />
   </div>
