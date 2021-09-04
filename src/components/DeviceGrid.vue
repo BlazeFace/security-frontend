@@ -1,7 +1,6 @@
 <template>
   <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 p-2">
-    <item-box :content= retContent />
-    <item-box :content= retContent />
+    <item-box v-for="content in retContent" :content= content />
   </div>
 </template>
 
@@ -24,7 +23,7 @@ export default defineComponent({
         if(typeof import.meta.env.VITE_API_URL !== "undefined") {
           base = import.meta.env.VITE_API_URL.toString();
         }
-        fetch(base+"content/test-content").then((result) => result.json()).then((data) => this.retContent = data.message.content.title);
+        fetch(base+"devices").then((result) => result.json()).then((data) => this.retContent = data.message.devices);
       }
     },
     beforeMount() {

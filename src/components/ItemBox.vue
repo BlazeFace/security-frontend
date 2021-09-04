@@ -1,6 +1,7 @@
 <template>
   <div class="bg-red-500 rounded-xl p-5">
-    <p class="mt-8 text-white text-sm">{{ content }}</p>
+    <img src={{content.url}} alt="phone icon">
+    <p class="mt-8 text-white text-sm">{{ content.title }}</p>
   </div>
 </template>
 
