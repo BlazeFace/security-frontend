@@ -24,7 +24,7 @@ export default defineComponent({
         if(typeof import.meta.env.VITE_API_URL !== "undefined") {
           base = import.meta.env.VITE_API_URL.toString();
         }
-        fetch(base+"content/test-content", {headers:{'Access-Control-Allow-Origin': '*'}}).then((result) => result.json()).then((data) => this.retContent = data.message.content.title);
+        fetch(base+"content/test-content").then((result) => result.json()).then((data) => this.retContent = data.message.content.title);
       }
     },
     beforeMount() {
