@@ -20,7 +20,11 @@ export default defineComponent({
     },
     methods: {
       getContents(): void {
-        fetch("/api/content/test-content").then((result) => result.json()).then((data) => this.retContent = data.message.content);
+        let base: string = '';
+        if(typeof import.meta.env.VITE_API_URL !== "undefined") {
+          base = import.meta.env.VITE_API_URL.toString();
+        }
+        fetch(base+"content/test-content").then((result) => result.json()).then((data) => this.retContent = data.message.content.title);
       }
     },
     beforeMount() {
