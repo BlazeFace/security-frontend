@@ -5,10 +5,11 @@
 </template>
 
 <script lang="ts">
-
-interface BoxContent {
-  title: string,
-  url: string
+declare global {
+  class BoxContent {
+    title: string
+    url: string
+  }
 }
 
 import { defineComponent } from 'vue';
