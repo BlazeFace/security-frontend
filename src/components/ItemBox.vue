@@ -1,17 +1,19 @@
 <template>
-  <div class="bg-red-500 rounded-xl p-5">
-    <img src={{content.url}} alt="phone icon">
+  <div class="bg-blue-800 rounded-xl p-5">
+    <img class="mx-auto" height="150" width="100" :src=content.url alt="phone icon">
     <p class="mt-8 text-white text-sm">{{ content.title }}</p>
   </div>
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   name: 'item-box',
   props: {
-    content: String
+    content: Object
   }
-}
+})
 </script>
 
 <style scoped>

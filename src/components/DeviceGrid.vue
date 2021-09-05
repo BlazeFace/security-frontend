@@ -5,6 +5,12 @@
 </template>
 
 <script lang="ts">
+
+interface BoxContent {
+  title: string,
+  url: string
+}
+
 import { defineComponent } from 'vue';
 import ItemBox from './ItemBox.vue'
 
@@ -14,7 +20,7 @@ export default defineComponent({
     },
     data() {
       return {
-        retContent: ''
+        retContent:[{title:'', url:''}] as BoxContent[]
       };
     },
     methods: {

@@ -7,7 +7,7 @@ export default defineConfig({
   server:{
     proxy: {
       '/api': {
-        target: 'http://future.eastus2.azurecontainer.io',
+        target: 'http://security.eastus.azurecontainer.io:4000/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       }
