@@ -6,7 +6,6 @@
 
 <script setup lang="ts">
 import DeviceGrid from '../components/DeviceGrid.vue'
-
 </script>
 
 <style scoped>

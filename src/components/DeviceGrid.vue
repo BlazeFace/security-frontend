@@ -1,13 +1,13 @@
 <template>
-  <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 p-2">
+  <div class="content-center grid gap-5 sm:grid-cols-2 lg:grid-cols-3 p-2">
     <item-box v-for="content in retContent" :content= content />
   </div>
 </template>
 
 <script lang="ts">
 declare global {
-  class BoxContent {
-    title: string
+  interface BoxContent {
+    title: string,
     url: string
   }
 }

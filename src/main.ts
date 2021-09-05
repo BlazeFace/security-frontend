@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import './index.css'
-import { createRouter,createWebHashHistory} from 'vue-router'
+import {createRouter, createWebHistory} from 'vue-router'
 import Home from './views/Home.vue'
 import Contact from './views/Contact.vue'
 
@@ -12,7 +12,7 @@ const routes = [
 
 const router = createRouter({
     // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
-    history: createWebHashHistory(),
+    history: createWebHistory(),
     routes, // short for `routes: routes`
 })
 
