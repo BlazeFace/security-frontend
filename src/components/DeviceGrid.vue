@@ -53,7 +53,7 @@ export default defineComponent({
         if(typeof import.meta.env.VITE_API_URL !== "undefined") {
           base = import.meta.env.VITE_API_URL.toString();
         }
-        fetch(base+"concerns").then((result) => result.json()).then((data) => this.retContentDevice = data.message.devices);
+        fetch(base+"concerns").then((result) => result.json()).then((data) => this.retContentConcern = data.message.devices);
       },
       onClickChildDevices(value:string){
         if(this.state.devices.has(value)) {
@@ -75,6 +75,7 @@ export default defineComponent({
     },
     beforeMount() {
       this.getContentsDevices();
+      this.getContentsConcerns();
     }
 })
 </script>
