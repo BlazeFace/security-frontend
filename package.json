@@ -13,6 +13,9 @@
     "vue-router": "^4.0.11"
   },
   "devDependencies": {
+    "@headlessui/vue": "^1.4.1",
+    "@heroicons/vue": "^1.0.4",
+    "@types/node": "^16.7.10",
     "@vitejs/plugin-vue": "^1.6.0",
     "@vue/cli-plugin-unit-jest": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.5",
@@ -24,5 +27,14 @@
     "vite": "^2.5.1",
     "vue-jest": "^5.0.0-0",
     "vue-tsc": "^0.2.2"
+  },
+  "vue": {
+    "configureWebpack": {
+      "devServer": {
+        "headers": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      }
+    }
   }
 }
