@@ -7,6 +7,7 @@ module.exports = {
         maroon: '#861F41',
         hokiestone: '#75787b',
         burntorange:'#C64600',
+        darkorange: '#933400',
         white: '#E5E1E6',
         darkblue: '#003C71',
         teal: '#508590',
