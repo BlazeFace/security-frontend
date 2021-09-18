@@ -3,11 +3,16 @@ import App from './App.vue'
 import './index.css'
 import {createRouter, createWebHistory} from 'vue-router'
 import Home from './views/Home.vue'
-import Contact from './views/Contact.vue'
+import About from './views/About.vue'
+import Topics from './views/Topics.vue'
+import Quiz from './views/Quiz.vue'
 
 const routes = [
     { path: '/', component: Home },
-    { path: '/contact', component: Contact }
+    { path: '/about', component: About },
+    { path: '/topics-list', component: Topics },
+    { path: '/quiz', component: Quiz }
+
 ]
 
 const router = createRouter({
