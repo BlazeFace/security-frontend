@@ -11,11 +11,12 @@
           </DisclosureButton>
         </div>
         <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-          <div class="flex-shrink-0 flex items-center">
+          <div class="float-left items-center flex-shrink-0 flex text-white">
+            <h1>VT Digital Security Planner</h1>
             <!-- Logo Here -->
           </div>
           <div class="hidden sm:block sm:ml-6">
-            <div class="flex space-x-4">
+            <div class="flex space-x-4 float-right">
               <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-darkorange hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
             </div>
           </div>

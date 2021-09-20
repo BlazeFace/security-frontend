@@ -1,6 +1,7 @@
-<!-- TODO: Move attribution and contact link to TheFooter -->
 <template>
-  
+  <div class="lg:px-8 h-screen">
+
+  </div>
 </template>
 
 <script setup lang="ts">

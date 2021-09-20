@@ -3,7 +3,9 @@
 </script>
 
 <template>
-  <DeviceGrid></DeviceGrid>
+  <div class="lg:px-8 h-screen">
+    <DeviceGrid></DeviceGrid>
+  </div>
 </template>
 
 <style>
