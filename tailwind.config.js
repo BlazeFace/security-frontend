@@ -11,8 +11,8 @@ module.exports = {
         darkblue: '#003C71',
         teal: '#508590',
         darkgrey: '#313335'
-
-      },}
+      }
+    }
   },
   variants: {
     extend: {},
