@@ -1,3 +1,4 @@
+<!-- TODO: Move attribution and contact link to TheFooter -->
 <template>
   <DeviceGrid></DeviceGrid>
   <div>
