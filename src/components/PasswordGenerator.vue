@@ -35,8 +35,7 @@
           <input type="checkbox" id="spec-chars" value="spec" v-model="passOptions">
         </div>
       </form>
-      <h1>{{ length }}</h1>
-      <h1> {{ passOptions }}</h1>
+      <h1> {{ password }}</h1>
     </div>
   </div>
 </template>
@@ -81,7 +80,7 @@ export default defineComponent({
           referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
           body: JSON.stringify(data) // body data type must match "Content-Type" header
         });
-        resp.json().then((data) => pass = data.message.devices);
+        resp.json().then((data) => pass = data.message);
         return pass;
       },
       set(pass){
