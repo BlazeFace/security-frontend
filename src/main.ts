@@ -6,12 +6,14 @@ import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Topics from './views/Topics.vue'
 import Quiz from './views/Quiz.vue'
+import NotFound from './views/NotFound.vue'
 
 const routes = [
     { path: '/', component: Home },
     { path: '/about', component: About },
     { path: '/topics-list', component: Topics },
-    { path: '/quiz', component: Quiz }
+    { path: '/quiz', component: Quiz },
+    { path: '/:catchAll(.*)', component: NotFound }
 
 ]
 

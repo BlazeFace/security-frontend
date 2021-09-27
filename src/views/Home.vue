@@ -13,7 +13,7 @@
         </div>
       </div>
     </div>
-    <div class="float-right w-1/2 p-4">
+    <div class="float-right w-1/2 p-4 align-middle">
       <img src="../assets/lock.png" class="p-10 inline-flex">
     </div>
   </div>
