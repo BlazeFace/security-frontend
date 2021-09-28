@@ -16,7 +16,8 @@
                 </div>
                 <div class="container flex-col w-2/3 justify-between">
                     <span class="font-bold uppercase md:mt-0 mb-2">Topic Categories</span>
-                    <div class="w-1/2">
+                    <!-- Load in different categories for topics -->
+                    <!-- <div class="w-1/2">
                       <span class="my-2"><a href="#" class="text-md hover:text-darkblue">link 1</a></span>
                       <span class="my-2"><a href="#" class="text-md hover:text-darkblue">link 1</a></span>
                       <span class="my-2"><a href="#" class="text-md hover:text-darkblue">link 1</a></span>
@@ -25,7 +26,7 @@
                       <span class="my-2"><a href="#" class="text-md hover:text-darkblue">link 1</a></span>
                       <span class="my-2"><a href="#" class="text-md hover:text-darkblue">link 1</a></span>
                       <span class="my-2"><a href="#" class="text-md hover:text-darkblue">link 1</a></span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
