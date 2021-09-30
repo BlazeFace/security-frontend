@@ -46,6 +46,7 @@ const navigation = [
   { name: 'Topics', href: '/topics-list'},
   { name: 'Quiz', href: '/quiz'},
   { name: 'About Us', href: '/about'},
+  { name: 'Example Topic', href: '/topic'},
 ]
 console.log(routerViewLocationKey.toString())
 
