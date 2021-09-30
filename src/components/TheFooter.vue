@@ -1,4 +1,56 @@
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
+import TheFooterLink from './TheFooterLink.vue';
+
+declare global {
+  interface LinkContent {
+    title: string,
+    url: string
+  }
+}
+
+class State {
+  devices: string[];
+  concerns: string[];
+  state: string
+   constructor() {
+     this.devices = [];
+     this.concerns = [];
+     this.state = "d"
+   }
+
+}
+export default defineComponent({
+    components: {
+      TheFooterLink
+    },
+    data() {
+      return {
+        retContentDevice:[{title:'', url:''}] as LinkContent[],
+        retContentConcern:[{title:'', url:''}] as LinkContent[],
+      };
+    },
+    methods: {
+      getContentsDevices(): void {
+        let base: string = '';
+        if(typeof import.meta.env.VITE_API_URL !== "undefined") {
+          base = import.meta.env.VITE_API_URL.toString();
+        }
+        fetch(base+"devices").then((result) => result.json()).then((data) => this.retContentDevice = data.message.devices);
+      },
+      getContentsConcerns(): void {
+        let base: string = '';
+        if(typeof import.meta.env.VITE_API_URL !== "undefined") {
+          base = import.meta.env.VITE_API_URL.toString();
+        }
+        fetch(base+"concerns").then((result) => result.json()).then((data) => this.retContentConcern = data.message.devices);
+      }
+    },
+    beforeMount() {
+      this.getContentsDevices();
+      this.getContentsConcerns();
+    }
+})
 </script>
 
 <template>
@@ -17,16 +69,10 @@
                 <div class="container flex-col w-2/3 justify-between">
                     <span class="font-bold uppercase md:mt-0 mb-2">Topic Categories</span>
                     <!-- Load in different categories for topics -->
-                    <!-- <div class="w-1/2">
-                      <span class="my-2"><a href="#" class="text-md hover:text-darkblue">link 1</a></span>
-                      <span class="my-2"><a href="#" class="text-md hover:text-darkblue">link 1</a></span>
-                      <span class="my-2"><a href="#" class="text-md hover:text-darkblue">link 1</a></span>
+                    <div>
+                      <TheFooterLink v-for="content in retContentDevice" :content= content></TheFooterLink>
+                      <TheFooterLink v-for="content in retContentConcern" :content= content></TheFooterLink>
                     </div>
-                    <div class="w-1/2">
-                      <span class="my-2"><a href="#" class="text-md hover:text-darkblue">link 1</a></span>
-                      <span class="my-2"><a href="#" class="text-md hover:text-darkblue">link 1</a></span>
-                      <span class="my-2"><a href="#" class="text-md hover:text-darkblue">link 1</a></span>
-                    </div> -->
                 </div>
             </div>
         </div>

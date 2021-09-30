@@ -1,6 +1,6 @@
 <template>
   <router-link v-bind:to='href'>
-    <button class="block max-w-sm px-4 py-2 bg-burntorange hover:bg-darkorange rounded-lg disabled:opacity-50 disabled:cursor-not-allowed border-darkorange">{{title}}</button>
+    <button class="block max-w-md px-4 py-2 bg-burntorange hover:bg-darkorange rounded-lg disabled:opacity-50 disabled:cursor-not-allowed border-darkorange">{{title}}</button>
   </router-link>
 </template>
 
