@@ -1,4 +1,5 @@
 <script lang="ts">
+
   const topicPages = [
     {
       title: "Title",
@@ -29,7 +30,10 @@
 
 <template>
   <div class="lg:px-8 h-screen">
+    <!-- Load Topics into Cards -->
+    <div>
 
+    </div>
   </div>
 </template>
 
