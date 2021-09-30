@@ -8,8 +8,8 @@
           <p class="py-2">Don't know where to start? Take our quiz to receive personalized recommendations.</p>
         </div>
         <div class="inline-flex gap-4">
-          <a href="/topics-list"> <BaseButton title="Browse Topics"></BaseButton> </a>
-          <a href="/quiz"> <BaseButton title="Take Quiz"></BaseButton> </a>
+          <BaseButton title="Browse Topics" href="/topics-list"></BaseButton>
+          <BaseButton title="Take Quiz" href="/quiz"></BaseButton>
         </div>
       </div>
       <div class="float-right w-1/2">
@@ -22,13 +22,12 @@
 
 <script setup lang="ts">
 import BaseButton from "../components/BaseButton.vue";
-import { RouterLink } from 'vue-router';
 
 const navigation = [
-  { name: 'Home', href: '/'},
-  { name: 'Topics', href: '/topics-list'},
-  { name: 'Quiz', href: '/quiz'},
-  { name: 'About Us', href: '/about'},
+  { title: 'Home', href: '/'},
+  { title: 'Topics', href: '/topics-list'},
+  { title: 'Quiz', href: '/quiz'},
+  { title: 'About Us', href: '/about'},
 ]
 </script>
 

@@ -4,15 +4,17 @@ import './index.css'
 import {createRouter, createWebHistory} from 'vue-router'
 import Home from './views/Home.vue'
 import About from './views/About.vue'
-import Topics from './views/Topics.vue'
+import Topic from './views/Topic.vue'
 import Quiz from './views/Quiz.vue'
 import NotFound from './views/NotFound.vue'
+import TopicsList from './views/TopicsList.vue'
 
 const routes = [
-    { path: '/', component: Home },
-    { path: '/about', component: About },
-    { path: '/topics-list', component: Topics },
-    { path: '/quiz', component: Quiz },
+    { path: '/', name: 'Home', component: Home },
+    { path: '/about', name: "About Us", component: About },
+    { path: '/topics-list', name: "Topics", component: TopicsList },
+    { path: '/quiz', name: "Quiz", component: Quiz },
+    // { path: 'topics-list/:topic-name', component: Topic},
     { path: '/:catchAll(.*)', component: NotFound }
 
 ]

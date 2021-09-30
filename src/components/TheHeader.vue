@@ -16,8 +16,11 @@
             <!-- Logo Here -->
           </div>
           <div class="hidden sm:block sm:ml-6">
-            <div class="flex space-x-4">
+            <!-- <div class="flex space-x-4">
               <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-darkorange text-white' : 'text-gray-100 hover:bg-darkorange hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
+            </div> -->
+            <div class="flex space-x-4">
+              <a v-for="item in navigation" :title="item.name" :href="item.href" :class="[item.name == $route.name ? 'bg-darkorange text-white' : 'text-gray-100 hover:bg-darkorange hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']" :aria-current="item.name == $route.name ? 'page' : undefined">{{ item.name }}</a>
             </div>
           </div>
         </div>
@@ -26,7 +29,7 @@
 
     <DisclosurePanel class="sm:hidden">
       <div class="px-2 pt-2 pb-3 space-y-1">
-        <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-darkorange text-white' : 'text-gray-100 hover:bg-gray-700 hover:text-white', 'block px-3 py-2 rounded-md text-base font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
+        <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.name == $route.name ? 'bg-darkorange text-white' : 'text-gray-100 hover:bg-gray-700 hover:text-white', 'block px-3 py-2 rounded-md text-base font-medium']" :aria-current="item.name == $route.name ? 'page' : undefined">{{ item.name }}</a>
       </div>
     </DisclosurePanel>
   </Disclosure>
@@ -37,11 +40,12 @@ import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuIt
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/vue/outline'
 import { Router, RouterLink, routerViewLocationKey } from 'vue-router'
 
+console.log(routerViewLocationKey.toString);
 const navigation = [
-  { name: 'Home', href: '/', current: true },
-  { name: 'Topics', href: '/topics-list', current: false },
-  { name: 'Quiz', href: '/quiz', current: false },
-  { name: 'About Us', href: '/about', current: false },
+  { name: 'Home', href: '/'},
+  { name: 'Topics', href: '/topics-list'},
+  { name: 'Quiz', href: '/quiz'},
+  { name: 'About Us', href: '/about'},
 ]
 console.log(routerViewLocationKey.toString())
 
@@ -63,6 +67,11 @@ export default {
       navigation,
     }
   },
+  data () {
+  return {
+    current: false,
+    }
+  }
 }
 </script>
 
