@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="lg:px-8 h-screen">
+  <div class="lg:px-8 h-auto p-2">
     <DeviceGrid></DeviceGrid>
   </div>
 </template>

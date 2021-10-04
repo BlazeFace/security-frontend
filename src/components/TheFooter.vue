@@ -12,7 +12,7 @@ declare global {
 class State {
   devices: string[];
   concerns: string[];
-  state: string
+  state: string;
    constructor() {
      this.devices = [];
      this.concerns = [];
@@ -44,11 +44,22 @@ export default defineComponent({
           base = import.meta.env.VITE_API_URL.toString();
         }
         fetch(base+"concerns").then((result) => result.json()).then((data) => this.retContentConcern = data.message.devices);
+      },
+      getContents(): void {
+        let base: string = '';
+        if(typeof import.meta.env.VITE_API_URL !== "undefined") {
+          base = import.meta.env.VITE_API_URL.toString();
+        }
+        fetch(base+"").then((result) => result.json()).then((data) => {
+          // this.retContentConcern = data.message.devices;
+          console.log(data);
+        });
       }
     },
     beforeMount() {
       this.getContentsDevices();
       this.getContentsConcerns();
+      this.getContents();
     }
 })
 </script>
