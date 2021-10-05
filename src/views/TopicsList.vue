@@ -3,6 +3,7 @@
 </template>
 
 <script lang="ts">
+
 const topics = [
     {
       title: "Title",

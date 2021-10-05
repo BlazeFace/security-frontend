@@ -1,31 +1,17 @@
 <script lang="ts">
 
-  const topicPages = [
-    {
-      title: "Title",
-      subheading: "Subheading",
-      content: "This is the page content.",
-      concerns: [
-        "Privacy",
-        "Data Management"
-      ],
-      devices: [
-        "iPhone"
-      ],
-      nextSteps: {
-        name: "Your Next Steps",
-        description: "Description"
-      },
-      importance: {
-        name: "Why is This Important?",
-        description: "Description"
-      },
-      learnMore: {
-        name: "Learn More",
-        description: "Description"
+  const Page = {
+    _id:"test-content",
+    device:"iphone",
+    goal:"privacy",
+    issue:"none",
+    content:{
+      title:"Turn Off Location",
+      subtitle:"Any Thing",
+      diff:"easy",
+      para:"Hello world"
       }
-    }
-  ]
+  }
 </script>
 
 <template>

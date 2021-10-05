@@ -12,13 +12,14 @@ declare global {
 class State {
   devices: string[];
   concerns: string[];
+  pages: [];
   state: string;
    constructor() {
      this.devices = [];
      this.concerns = [];
+     this.pages = [];
      this.state = "d"
    }
-
 }
 export default defineComponent({
     components: {
@@ -28,6 +29,9 @@ export default defineComponent({
       return {
         retContentDevice:[{title:'', url:''}] as LinkContent[],
         retContentConcern:[{title:'', url:''}] as LinkContent[],
+        retContentPages:[{_id:'', device:'', goal:'', issue:'', 
+          content: {title:'', subtitle:'', diff:'', para:''}
+        }]
       };
     },
     methods: {
@@ -45,21 +49,21 @@ export default defineComponent({
         }
         fetch(base+"concerns").then((result) => result.json()).then((data) => this.retContentConcern = data.message.devices);
       },
-      getContents(): void {
-        let base: string = '';
-        if(typeof import.meta.env.VITE_API_URL !== "undefined") {
-          base = import.meta.env.VITE_API_URL.toString();
-        }
-        fetch(base+"").then((result) => result.json()).then((data) => {
-          // this.retContentConcern = data.message.devices;
-          console.log(data);
-        });
-      }
+      // getTestContent(): void {
+      //   let base: string = '';
+      //   if(typeof import.meta.env.VITE_API_URL !== "undefined") {
+      //     base = import.meta.env.VITE_API_URL.toString();
+      //   }
+      //   fetch(base+"content/test-content").then((result) => result.json()).then((data) => {
+      //     // this.retContentConcern = data.message.devices;
+      //     console.log(data);
+      //   });
+      // }
     },
     beforeMount() {
       this.getContentsDevices();
       this.getContentsConcerns();
-      this.getContents();
+      // this.getTestContent();
     }
 })
 </script>
