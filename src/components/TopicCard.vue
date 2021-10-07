@@ -1,32 +1,32 @@
 <template>
-
+  <div>
+    <img>
+    <h1>{{data?.content.title}}</h1>
+    <h2>{{}}</h2>
+  </div>
 </template>
 
 <script lang="ts">
-let data = {
-  title: "Title",
-  subheading: "Subheading",
-  content: "This is the page content.",
-  concerns: [
-    "Privacy",
-    "Data Management"
-  ],
-  devices: [
-    "iPhone"
-  ],
-  nextSteps: {
-    name: "Your Next Steps",
-    description: "Description"
+import { defineComponent } from 'vue';
+import BaseButtonVue from './BaseButton.vue';
+
+export default defineComponent({
+  name: 'topic-card',
+  props: {
+    data: Object,
   },
-  importance: {
-    name: "Why is This Important?",
-    description: "Description"
-  },
-  learnMore: {
-    name: "Learn More",
-    description: "Description"
+  data() {
+    return {
+      clicked: false
+    }
+    },
+  methods: {
+    onClick (event: string) {
+      this.clicked = !this.clicked
+      this.$emit("clicked", event)
+    }
   }
-}
+})
 </script>
 
 <style scoped>

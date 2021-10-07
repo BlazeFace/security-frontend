@@ -3,32 +3,33 @@
 </template>
 
 <script lang="ts">
+import TopicCardVue from "../components/TopicCard.vue"
 
 const topics = [
     {
-      title: "Title",
-      subheading: "Subheading",
-      content: "This is the page content.",
-      concerns: [
-        "Privacy",
-        "Data Management"
-      ],
-      devices: [
-        "iPhone"
-      ],
-      nextSteps: {
-        name: "Your Next Steps",
-        description: "Description"
-      },
-      importance: {
-        name: "Why is This Important?",
-        description: "Description"
-      },
-      learnMore: {
-        name: "Learn More",
-        description: "Description"
+      _id: "test",
+      device: "iPhone",
+      goal: "Setup 2-Factor Authentication",
+      issue: "Privacy",
+      content: {
+        title: "Title",
+        subtitle: "Subtitle",
+        diff: "Easy",
+        para: "Content"
       }
-    }
+    },
+    {
+      _id: "test",
+      device: "iPhone",
+      goal: "Setup 2-Factor Authentication",
+      issue: "Privacy",
+      content: {
+        title: "Title",
+        subtitle: "Subtitle",
+        diff: "Easy",
+        para: "Content"
+      }
+    },
   ]
 </script>
 
