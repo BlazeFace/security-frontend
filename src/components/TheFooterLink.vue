@@ -1,5 +1,5 @@
 <template>
-    <router-link v-bind:to='content?.url'>{{ content?.title }}</router-link>
+    <router-link class="p-1 flex-auto hover:text-darkblue" v-bind:to='content?.url'>{{ content?.title }}</router-link>
 </template>
 
 <script lang="ts">
