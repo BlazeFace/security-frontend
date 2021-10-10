@@ -8,10 +8,12 @@ import BaseButton from './BaseButton.vue';
     <img>
     <h1>{{data?.goal}}</h1>
     <h2>{{data?.content.title}}</h2>
-    <p>{{data?.content.diff}}</p>
-    <p>{{data?.issue}}</p>
-    <p>{{data?.device}}</p>
     <div>
+      <p>Difficulty: {{data?.content.diff}}</p>
+      <p>Concern: {{data?.issue}}</p>
+      <p>Device: {{data?.device}}</p>
+    </div>
+    <div class="">
       <BaseButton title="Learn More" :href=data?._id></BaseButton>
     </div>
   </div>

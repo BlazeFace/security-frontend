@@ -17,7 +17,7 @@
       </div>
   </div>
   <!-- Content -->
-  <div class="w-2/3 m-1 p-2 h-screen overscroll-y-auto float-right bg-white rounded text-darkgrey">
+  <div class="w-2/3 m-1 p-2 h-screen overflow-y-auto float-right bg-white rounded text-darkgrey">
     <h1 class="font-bold">Topics</h1>
     <div class="">
       <TopicCard v-for="topic in topics" :data=topic></TopicCard>
