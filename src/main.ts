@@ -15,6 +15,7 @@ const routes = [
     { path: '/topics-list', name: "Topics", component: TopicsList },
     { path: '/quiz', name: "Quiz", component: Quiz },
     { path: '/topic', name: "Example Topic", component: Topic},
+    { path: '/topic:_id', name: "Example Topic", component: Topic},
     { path: '/:catchAll(.*)', component: NotFound }
 
 ]
