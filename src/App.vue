@@ -44,5 +44,6 @@ class State {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color: #E5E1E6;
 }
 </style>
