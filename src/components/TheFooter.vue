@@ -84,7 +84,7 @@ export default defineComponent({
                 <div class="container w-1/2 my-1 mx-auto justify-between">
                     <span class="font-bold uppercase md:mt-0 mb-2">Topic Categories</span>
                     <!-- Load in different categories for topics -->
-                    <div class="p-1 w-full mx-auto md:w-1/2">
+                    <div class="my-2 w-full mx-auto md:w-1/2">
                       <div v-for="content in retContentDevice" class="">
                         <TheFooterLink class="" :content= content></TheFooterLink>
                       </div>
