@@ -9,18 +9,18 @@
   <div class="w-1/3 p-2 h-1/2 m-1 mt-10 rounded bg-darkorange text-white">
     <h1 class="font-bold">Filters</h1>
     <h2 class="font-bold ml-2 overflow-y-auto text-left">Device</h2>
-      <div v-for="c in retContentDevice" class="">
-        <label class="inline-block">
-          <input type="checkbox" class="form-checkbox checked: bg-darkblue">
-          <span class="ml-2">{{c.title}}</span>
+      <div v-for="c in retContentDevice">
+        <label class="ml-2 text-left">
+          <input type="checkbox" class="float-left form-checkbox checked: bg-darkblue">
+          <p class="ml-2 float-left">{{c.title}}</p>
         </label> 
       </div>
     <h2 class="font-bold ml-2 text-left mt-4">Concern</h2>
-      <div v-for="c in retContentConcern" class="">
-        <label class="inline-block ml-2">
-          <input type="checkbox" class="form-checkbox checked: bg-darkblue">
-          <span class="ml-2">{{c.title}}</span>
-        </label> 
+      <div v-for="c in retContentConcern">
+          <label class="ml-2 text-left">
+            <input type="checkbox" class="float-left form-checkbox checked: bg-darkblue">
+            <span class="ml-2 float-left">{{c.title}}</span>
+          </label> 
       </div>
   </div>
   <!-- Content -->
