@@ -1,7 +1,23 @@
-<script lang="ts">
+<script setup lang="ts">
 import { defineComponent } from 'vue';
 import BaseButton from './BaseButton.vue';
+</script>
 
+<template>
+  <div class="h-auto w-full p-1 m-1 rounded-md bg-maroon hover:border-burntorange text-white border-2 border-darkgrey">
+    <img>
+    <h1>{{data?.goal}}</h1>
+    <h2>{{data?.content.title}}</h2>
+    <p>{{data?.content.diff}}</p>
+    <p>{{data?.issue}}</p>
+    <p>{{data?.device}}</p>
+    <div>
+      <BaseButton title="Learn More" :href=data?._id></BaseButton>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
 export default defineComponent({
   name: 'topic-card',
   props: {
@@ -21,16 +37,8 @@ export default defineComponent({
 })
 </script>
 
-<template>
-  <div class="h-auto w-full p-1 m-1 rounded-md bg-darkblue text-white border-2 border-darkgrey">
-    <img>
-    <h1>{{data?.content.title}}</h1>
-    <h2>{{data?.content.subtitle}}</h2>
-    <h3>{{data?.diff}}</h3>
-    <h3>{{data?.diff}}</h3>
-    <BaseButton title="Learn More" href="/test"></BaseButton>
-  </div>
-</template>
-
 <style scoped>
+.h1 {
+  font: bold;
+}
 </style>
