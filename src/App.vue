@@ -3,6 +3,31 @@
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import TheHeader from './components/TheHeader.vue';
 import TheFooter from './components/TheFooter.vue';
+import { defineComponent } from 'vue';
+
+declare global {
+  interface Page {
+    _id: string,
+    device: string,
+    goal: string,
+    privacy: string,
+    issue: string,
+    content: {
+      title: string,
+      subtitle: string,
+      diff: string,
+      para: string
+    }
+  }
+}
+class State {
+  pages: Page[];
+  state: string;
+   constructor() {
+     this.pages = [];
+     this.state = "d"
+  }
+}
 
 </script>
 
@@ -19,5 +44,6 @@ import TheFooter from './components/TheFooter.vue';
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color: #E5E1E6;
 }
 </style>
