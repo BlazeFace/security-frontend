@@ -12,10 +12,10 @@ import TopicsList from './views/TopicsList.vue'
 const routes = [
     { path: '/', name: 'Home', component: Home },
     { path: '/about', name: "About Us", component: About },
-    { path: '/topics-list', name: "Topics", component: TopicsList },
+    { path: '/topics', name: "Topics", component: TopicsList },
     { path: '/quiz', name: "Quiz", component: Quiz },
     { path: '/topic', name: "Example Topic", component: Topic},
-    { path: '/topic:_id', name: "Example Topic", component: Topic},
+    { path: '/topics/:_id', name: "Topic", component: Topic},
     { path: '/:catchAll(.*)', component: NotFound }
 
 ]

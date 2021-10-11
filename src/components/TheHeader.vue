@@ -43,7 +43,7 @@ import { Router, RouterLink, routerViewLocationKey } from 'vue-router'
 console.log(routerViewLocationKey.toString);
 const navigation = [
   { name: 'Home', href: '/'},
-  { name: 'Topics', href: '/topics-list'},
+  { name: 'Topics', href: '/topics'},
   { name: 'Quiz', href: '/quiz'},
   { name: 'About Us', href: '/about'},
   { name: 'Example Topic', href: '/topic'},
