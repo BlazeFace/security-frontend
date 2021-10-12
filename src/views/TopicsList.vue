@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import TopicCard from "../components/TopicCard.vue"
+  import { defineComponent } from "@vue/runtime-core";
 </script>
 
 <template>
@@ -149,8 +150,9 @@
       beforeMount() {
         this.getContentsDevices();
         this.getContentsConcerns();
-        //this.getContentsPages();
-        this.retContentPages = topics;
+        // this.getContentsPages();
+        // this.retContentPages = topics;
+        this.getFilteredContent();
       }
   })
 </script>
