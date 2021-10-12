@@ -17,7 +17,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import BaseButton from './BaseButton.vue'
-
 export default {
     props: {
         question: String,
@@ -46,11 +45,9 @@ export default {
 table {
     width: 100%;
 }
-
 th {
     display: inline-block;
 }
-
 .question {
     background-color: orange;
     border-radius: 8px;
@@ -59,7 +56,6 @@ th {
     margin-right: auto;
     border: 2px DarkOrange solid;
 }
-
 .question-content {
     padding: 8px 8px 8px 8px;
 }
