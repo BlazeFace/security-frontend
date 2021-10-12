@@ -1,3 +1,4 @@
+<template>
   <div class="h-auto p-2 bg-white grid-rows-2 lg:px-10 md:grid-cols-2 md:grid-flow-col md:inline-grid md:grid-rows-1">
     <div class="p-4 row-start-2  md:row-start-1">
       <div class="p-4 bg-maroon rounded-2xl text-white">
@@ -13,15 +14,12 @@
       </div>
     </div>
   <div class="p-4 row-span-2 md:row-span-1">
-    <img src="../assets/lock.png" class="md:min-h-40 max-h-30">
+    <img src="../assets/lock.png" class="md:min-h-40 max-h-30" alt="Picture of a pad lock with binary digits behind it">
   </div>
   </div>
-  <PasswordGenerator></PasswordGenerator>
 </template>
 
 <script setup lang="ts">
-import DeviceGrid from '../components/DeviceGrid.vue'
-import PasswordGenerator from "../components/PasswordGenerator.vue";
 import BaseButton from "../components/BaseButton.vue";
 
 </script>

@@ -81,6 +81,7 @@ export default defineComponent({
           body: JSON.stringify(data) // body data type must match "Content-Type" header
         });
         resp.json().then((data) => pass = data.message);
+        console.log(pass)
         return pass;
       },
       set(pass){
