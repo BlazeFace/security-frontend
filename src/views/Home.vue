@@ -8,7 +8,7 @@
           <p class="py-2">Don't know where to start? Take our quiz to receive personalized recommendations.</p>
         </div>
         <div class="inline-flex gap-4">
-          <BaseButton title="Browse Topics" href="/topics"></BaseButton>
+          <BaseButton title="Browse Topics" href="/topics-list"></BaseButton>
           <BaseButton title="Take Quiz" href="/quiz"></BaseButton>
         </div>
       </div>
