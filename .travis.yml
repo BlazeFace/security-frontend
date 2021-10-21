@@ -1,7 +1,5 @@
 language: python
 
-script: npm run test
-
 after_success:
   - ./login.sh
   - echo "$DockerPassword" | docker login --username "$DockerUsername" --password-stdin; docker build . -t blzface/future-of-security-frontend
