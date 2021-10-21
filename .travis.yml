@@ -1,4 +1,9 @@
-language: python
+language: node_js
+
+node_js:
+  - node
+
+script: npm run test
 
 after_success:
   - ./login.sh
