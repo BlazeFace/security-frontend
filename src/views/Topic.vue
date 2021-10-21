@@ -1,5 +1,4 @@
-<script lang="ts">
-
+<script setup lang="ts">
   const Page = {
     _id:"test-content",
     device:"iphone",
