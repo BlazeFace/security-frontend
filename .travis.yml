@@ -1,7 +1,9 @@
 sudo: required
 language: node_js
 node_js:
-  - node
+  - "14"
+
+script: npm run test
 
 after_success:
   - ./login.sh
