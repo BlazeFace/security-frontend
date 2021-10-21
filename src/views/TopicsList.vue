@@ -33,7 +33,7 @@
 </template>
 
 <script lang='ts'>
-
+  import {defineComponent} from "vue";
   var topics = [
    {
      _id: "test",
