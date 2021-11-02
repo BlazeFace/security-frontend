@@ -8,7 +8,7 @@
     <br/>
     <DeviceGrid></DeviceGrid>
     <br/>
-    <div class="py-2" v-for="question in questions" :question=question>
+    <div class="py-2" v-for="question in questions">
         <QuizQuestion 
             v-bind:question="question.title"
             v-bind:description="question.desc"></QuizQuestion>
