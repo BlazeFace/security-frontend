@@ -31,9 +31,17 @@ import { defineComponent } from 'vue';
 
 <template>
   <div class="lg:px-8 h-auto">
-    
-    <div>
-
+    <div class="text-left p-2">
+      <h1 class="font-bold">{{data?.content.title}}</h1>
+      <h2>{{data?.content.subtitle}}</h2>
+    </div>
+    <div class="text-left w-1/3 p-1">
+      <p>Difficulty: {{data?.content.diff}}</p>
+      <p>Concern: {{data?.issue}}</p>
+      <p>Device: {{data?.device}}</p>
+    </div>
+    <div class="text-left p-1">
+      <p>{{data?.content.para}}</p>
     </div>
   </div>
 </template>
