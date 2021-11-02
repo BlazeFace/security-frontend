@@ -1,17 +1,5 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
-  let Page = {
-    _id:"test-content",
-    device:"iphone",
-    goal:"privacy",
-    issue:"none",
-    content:{
-      title:"Turn Off Location",
-      subtitle:"Any Thing",
-      diff:"easy",
-      para:"Hello world"
-    }
-  }
   export default defineComponent({
   name: 'topic-card',
   props: {
