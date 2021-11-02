@@ -27,15 +27,8 @@ export default defineComponent({
     data: Object,
   },
   data() {
-    return {
-      clicked: false
-    }
     },
   methods: {
-    onClick (event: string) {
-      this.clicked = !this.clicked
-      this.$emit("clicked", event)
-    }
   }
 })
 </script>

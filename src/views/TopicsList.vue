@@ -1,60 +1,10 @@
 <script lang="ts">
-  import TopicCard from "../components/TopicCard.vue"
+  import TopicCard from "../components/TopicCard.vue";
   import { defineComponent } from "@vue/runtime-core";
-  var topics = [
-   {
-     _id: "test",
-     device: "iPhone",
-     goal: "Setup 2-Factor Authentication",
-     issue: "Privacy",
-     content: {
-       title: "Title",
-       subtitle: "Subtitle",
-       diff: "Easy",
-       para: "Content"
-     }
-   },
-   {
-     _id: "test2",
-     device: "Apple Computer",
-     goal: "Disable Cookies",
-     issue: "Privacy",
-     content: {
-       title: "Title",
-       subtitle: "Subtitle",
-       diff: "Easy",
-       para: "Content"
-     }
-   },
-   {
-     _id: "test3",
-     device: "Windows",
-     goal: "Create Safer Passwords",
-     issue: "Password Security",
-     content: {
-       title: "Title",
-       subtitle: "Subtitle",
-       diff: "Easy",
-       para: "Content"
-     }
-   },
-  ]
-
-  class State {
-  devices: string[];
-  concerns: string[];
-  pages: [];
-  state: string;
-   constructor() {
-     this.devices = [];
-     this.concerns = [];
-     this.pages = [];
-     this.state = "d"
-   }
-  }
-
+  
   export default defineComponent({
       components: {
+        TopicCard
       },
       data() {
         return {
@@ -80,16 +30,6 @@
             base = import.meta.env.VITE_API_URL.toString();
           }
           fetch(base+"concerns").then((result) => result.json()).then((data) => this.retContentConcern = data.message.devices);
-        },
-        getContentsPages(): void {
-          let base: string = '';
-          if(typeof import.meta.env.VITE_API_URL !== "undefined") {
-            base = import.meta.env.VITE_API_URL.toString();
-          }
-          fetch(base+"content/test-content").then((result) => result.json()).then((data) => {
-            this.retContentPages = data.message.pages;
-            console.log(data);
-          });
         },
         async getFilteredContent(device: string, concern: string){
           let base: string = '';
@@ -132,24 +72,46 @@
               this.dataFilter.concern.push(name);
             }
           }
-          this.retContentPages = [];
-          if (this.dataFilter.concern.length == 0 && this.dataFilter.concern.length == 0){
+          this.retContentPages = [];  // reset the pages so you don't have infinite duplicate pages
+          // Get all pages if the filters are empty
+          if (this.dataFilter.device.length == 0 && this.dataFilter.concern.length == 0){
             for (var dev in this.retContentDevice) {
               for (var con in this.retContentConcern) {
                 this.getFilteredContent(dev, con);
               }
             }
           } else {
-            for (var dev in this.dataFilter.device) {
-              for (var con in this.retContentConcern) {
-                this.getFilteredContent(dev, con);
-              }
-            }
-            for (var con in this.dataFilter.concern) {
+            // Get pages if only concern filters have been applied
+            if (this.dataFilter.device.length == 0) {
               for (var dev in this.retContentDevice) {
-                this.getFilteredContent(dev, con);
+                for (var con in this.dataFilter.concern) {
+                  this.getFilteredContent(dev, con);
+                }
+              }
+            } else {
+              // Get all device-filtered content
+              for (var dev in this.dataFilter.device) {
+                for (var con in this.retContentConcern) {
+                  this.getFilteredContent(dev, con);
+                }
               }
             }
+            // Get pages if only device filters have been applied
+            if (this.dataFilter.concern.length == 0 ) {
+              for (var con in this.retContentConcern) {
+                for (var dev in this.dataFilter.device) {
+                  this.getFilteredContent(dev, con);
+                }
+              }
+            } else {
+              // Get all concern-filtered content
+              for (var con in this.dataFilter.concern) {
+                for (var dev in this.retContentDevice) {
+                  this.getFilteredContent(dev, con);
+                }
+              }
+            }
+            
           }
         }
           
@@ -157,8 +119,7 @@
       beforeMount() {
         this.getContentsDevices();
         this.getContentsConcerns();
-        // this.getContentsPages();
-        // this.retContentPages = topics;
+        // Get all possible pages; this almost definitely results in duplicate items
         for (var dev in this.retContentDevice) {
           for (var con in this.retContentConcern) {
             this.getFilteredContent(dev, con);
@@ -171,7 +132,7 @@
 
 <template>
 <div class="w-full h-screen inline-flex">
-<!-- Filter -->
+<!-- Filters -->
   <div class="w-1/3 p-2 h-1/2 m-1 mt-10 rounded bg-darkorange text-white">
     <h1 class="font-bold">Filters</h1>
     <h2 class="font-bold ml-2 overflow-y-auto text-left">Device</h2>

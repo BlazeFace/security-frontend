@@ -3,7 +3,6 @@ import App from './App.vue'
 import './index.css'
 import {createRouter, createWebHistory} from 'vue-router'
 import Home from './views/Home.vue'
-import Contact from './views/Contact.vue'
 import About from './views/About.vue'
 import Topic from './views/Topic.vue'
 import Quiz from './views/Quiz.vue'
@@ -15,8 +14,7 @@ const routes = [
     { path: '/about', name: "About Us", component: About },
     { path: '/topics-list', name: "Topics", component: TopicsList },
     { path: '/quiz', name: "Quiz", component: Quiz },
-    { path: '/topic', name: "Example Topic", component: Topic},
-    { path: '/topic:_id', name: "Example Topic", component: Topic},
+    { path: '/topic/:_id', name: "View Topic", component: Topic},
     { path: '/:catchAll(.*)', component: NotFound }
 
 ]
